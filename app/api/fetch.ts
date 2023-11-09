@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 
 const baseUrlAmazon = 'https://api.music.amazon.dev/v1'
+
 export function fetchAmazon({
   endpoint,
   method = 'GET',

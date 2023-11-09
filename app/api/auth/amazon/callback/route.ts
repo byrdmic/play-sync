@@ -2,7 +2,6 @@ import { cookies } from 'next/headers'
 import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
-  console.log('we are on a GET')
   const error = request.nextUrl.searchParams.get('error')
   if (error) {
     console.error('Error when attempting authorization!', error)

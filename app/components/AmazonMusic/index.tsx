@@ -10,7 +10,6 @@ export default async function AmazonMusic() {
   const amazonAccessToken = cookies().get('amazon_access_token')
   const isAmazonAuthorized = !!amazonAccessToken
   if (isAmazonAuthorized) {
-    console.log('fetching amazon...')
     const response = await fetchAmazon({
       endpoint: '/me/playlists',
     })
