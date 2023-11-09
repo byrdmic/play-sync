@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div id="amazon-root"></div>
         <main className="flex min-h-screen">
           <Container maxWidth="lg">{children}</Container>
         </main>

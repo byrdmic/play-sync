@@ -1,8 +1,8 @@
-import { cookies } from 'next/headers'
+import Instructions from './Instructions'
+import Spotify from './components/Spotify'
+import AmazonMusic from './components/AmazonMusic'
 
 export default function Home() {
-  const spotifyAccessToken = cookies().get('spotify_access_token')
-  const isSpotifyAuthorized = !!spotifyAccessToken
   return (
     <main className="flex flex-col p-24">
       <div className="flex flex-col items-center">
@@ -11,10 +11,19 @@ export default function Home() {
           Transfer Playlists from Spotify to Amazon Music
         </div>
       </div>
-      <div>
-        <Instructions />
+      <div className="flex flex-col items-center">
+        <div className="w-1/2 mt-6 mb-12">
+          <Instructions />
+        </div>
+        <div className="flex w-2/3 justify-center">
+          <div className="w-1/2 p-2">
+            <Spotify />
+          </div>
+          <div className="w-1/2 p-2">
+            <AmazonMusic />
+          </div>
+        </div>
       </div>
-      {/* <Spotify /> */}
     </main>
   )
 }
